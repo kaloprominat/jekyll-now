@@ -6,7 +6,9 @@
     {% capture tag_name %}{{ tag }}{% endcapture %}
     <!-- <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>,&nbsp;</a> -->
 
-    {% capture new_var %}<a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>,&nbsp;</a>{% endcapture %}
+    <!-- {% capture new_var %}<a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>,&nbsp;</a>{% endcapture %} -->
+
+    {% assign new_var = '<a href="/tag/' | append: tag_name | append: '"><code class="highligher-rouge"><nobr>' | append: '</nobr></code>,&nbsp;</a>' }
 
     {{ my_array | push: new_var }}
 
