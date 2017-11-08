@@ -9,12 +9,13 @@ layout: default
     {{ content }}
   </div>
 
-  <span>[&nbsp;
+  <!-- <span>[&nbsp;
   {% for tag in page.tags %}
     {% capture tag_name %}{{ tag }}{% endcapture %}
     <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>,&nbsp;</a>
   {% endfor %}
-]</span><br/>
+]</span><br/> -->
+{% include post_tags.html %}
 
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}

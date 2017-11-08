@@ -1,0 +1,17 @@
+{% new_array my_array %}
+{% endnew_array %}
+
+<span>[&nbsp;
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <!-- <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>,&nbsp;</a> -->
+
+    {% capture new_var %}<a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>,&nbsp;</a>{% endcapture %}
+
+    {{ my_array | push: new_var }}
+
+  {% endfor %}
+
+  {{page.tags | join: ', '}}
+
+]</span><br/>
